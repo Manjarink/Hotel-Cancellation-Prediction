@@ -1,10 +1,10 @@
 # Hotel Reservation Cancellation Prediction Using Machine Learning
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
-[![scikit-learn](https://img.shields.io/badge/scikit--learn-1.0%2B-orange.svg)](https://scikit-learn.org/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange.svg)](https://jupyter.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-A binary classification machine learning project that predicts whether a hotel reservation will be **cancelled** or **not cancelled** based on booking information available at the time of reservation. Compares six classification models and analyzes key cancellation drivers.
+A binary classification machine learning project that predicts whether a hotel reservation will be **cancelled** or **not cancelled** based on booking details available at reservation time. Compares six classification models and analyzes key cancellation drivers.
 
 ---
 
@@ -87,16 +87,9 @@ Can we accurately predict whether a hotel booking will be cancelled using custom
 ## 📁 Repository Structure
 ```
 ├── Hotel Reservations.csv                  # Dataset (36,275 records)
-├── Hotel_Cancellation_Prediction.ipynb     # Interactive Jupyter Notebook with outputs
-├── hotel_cancellation.py                   # Complete, self-contained Python script
-├── requirements.txt                        # Python dependencies
-├── model_comparison.csv                    # Final evaluation metrics for 6 models
-├── sensitivity_check.csv                   # Analysis with/without special requests
-├── run_output.txt                          # Execution logs and detailed classification reports
-├── viva_guide.md                           # Interview & viva preparation notes
-├── Hotel_Cancellation_Project_Report.docx  # Comprehensive formal report
-├── Hotel_Cancellation_Report_Notebook.docx# Notebook-formatted report
-└── figures/                                # 15 high-res generated charts & plots
+├── Untitled.ipynb                          # Interactive Jupyter Notebook with all outputs
+├── Hotel_Cancellation_Report_Notebook.docx# Project report document
+└── figures/                                # High-resolution generated charts & plots
 ```
 
 ---
@@ -109,22 +102,9 @@ git clone https://github.com/Manjarink/Hotel-Cancellation-Prediction.git
 cd Hotel-Cancellation-Prediction
 ```
 
-### 2. Install dependencies
+### 2. Launch Jupyter Notebook
 ```bash
-pip install -r requirements.txt
-```
-
-### 3. Run the analysis
-You can either run the script or explore the interactive notebook:
-
-**Run the Python script:**
-```bash
-python hotel_cancellation.py
-```
-
-**Launch Jupyter Notebook:**
-```bash
-jupyter notebook Hotel_Cancellation_Prediction.ipynb
+jupyter notebook Untitled.ipynb
 ```
 
 ---

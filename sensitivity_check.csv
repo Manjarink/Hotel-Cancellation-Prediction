@@ -1,5 +1,0 @@
-Model,Feature set,Accuracy,Precision (Canceled),Recall (Canceled),F1 (Canceled)
-Random Forest,with special requests,0.9016,0.8823,0.8073,0.8431
-Random Forest,without special requests,0.8469,0.8121,0.6929,0.7478
-Logistic Regression,with special requests,0.8094,0.7528,0.6226,0.6816
-Logistic Regression,without special requests,0.7615,0.6931,0.4884,0.5731

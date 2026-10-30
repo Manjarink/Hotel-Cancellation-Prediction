@@ -25,3 +25,4 @@ env/
 # IDE files
 .vscode/
 .idea/
+.backup/
