@@ -1,0 +1,431 @@
+First 5 rows:
+  Booking_ID  no_of_adults  ...  no_of_special_requests  booking_status
+0   INN00001             2  ...                       0    Not_Canceled
+1   INN00002             2  ...                       1    Not_Canceled
+2   INN00003             1  ...                       0        Canceled
+3   INN00004             2  ...                       0        Canceled
+4   INN00005             2  ...                       0        Canceled
+
+[5 rows x 19 columns]
+
+Last 5 rows:
+      Booking_ID  no_of_adults  ...  no_of_special_requests  booking_status
+36270   INN36271             3  ...                       1    Not_Canceled
+36271   INN36272             2  ...                       2        Canceled
+36272   INN36273             2  ...                       2    Not_Canceled
+36273   INN36274             2  ...                       0        Canceled
+36274   INN36275             2  ...                       0    Not_Canceled
+
+[5 rows x 19 columns]
+
+Shape: (36275, 19)
+
+Columns:
+Index(['Booking_ID', 'no_of_adults', 'no_of_children', 'no_of_weekend_nights',
+       'no_of_week_nights', 'type_of_meal_plan', 'required_car_parking_space',
+       'room_type_reserved', 'lead_time', 'arrival_year', 'arrival_month',
+       'arrival_date', 'market_segment_type', 'repeated_guest',
+       'no_of_previous_cancellations', 'no_of_previous_bookings_not_canceled',
+       'avg_price_per_room', 'no_of_special_requests', 'booking_status'],
+      dtype='str')
+
+Info:
+<class 'pandas.DataFrame'>
+RangeIndex: 36275 entries, 0 to 36274
+Data columns (total 19 columns):
+ #   Column                                Non-Null Count  Dtype  
+---  ------                                --------------  -----  
+ 0   Booking_ID                            36275 non-null  str    
+ 1   no_of_adults                          36275 non-null  int64  
+ 2   no_of_children                        36275 non-null  int64  
+ 3   no_of_weekend_nights                  36275 non-null  int64  
+ 4   no_of_week_nights                     36275 non-null  int64  
+ 5   type_of_meal_plan                     36275 non-null  str    
+ 6   required_car_parking_space            36275 non-null  int64  
+ 7   room_type_reserved                    36275 non-null  str    
+ 8   lead_time                             36275 non-null  int64  
+ 9   arrival_year                          36275 non-null  int64  
+ 10  arrival_month                         36275 non-null  int64  
+ 11  arrival_date                          36275 non-null  int64  
+ 12  market_segment_type                   36275 non-null  str    
+ 13  repeated_guest                        36275 non-null  int64  
+ 14  no_of_previous_cancellations          36275 non-null  int64  
+ 15  no_of_previous_bookings_not_canceled  36275 non-null  int64  
+ 16  avg_price_per_room                    36275 non-null  float64
+ 17  no_of_special_requests                36275 non-null  int64  
+ 18  booking_status                        36275 non-null  str    
+dtypes: float64(1), int64(13), str(5)
+memory usage: 5.3 MB
+None
+
+Descriptive statistics:
+       no_of_adults  no_of_children  ...  avg_price_per_room  no_of_special_requests
+count  36275.000000    36275.000000  ...        36275.000000            36275.000000
+mean       1.844962        0.105279  ...          103.423539                0.619655
+std        0.518715        0.402648  ...           35.089424                0.786236
+min        0.000000        0.000000  ...            0.000000                0.000000
+25%        2.000000        0.000000  ...           80.300000                0.000000
+50%        2.000000        0.000000  ...           99.450000                0.000000
+75%        2.000000        0.000000  ...          120.000000                1.000000
+max        4.000000       10.000000  ...          540.000000                5.000000
+
+[8 rows x 14 columns]
+
+Missing values per column:
+Booking_ID                              0
+no_of_adults                            0
+no_of_children                          0
+no_of_weekend_nights                    0
+no_of_week_nights                       0
+type_of_meal_plan                       0
+required_car_parking_space              0
+room_type_reserved                      0
+lead_time                               0
+arrival_year                            0
+arrival_month                           0
+arrival_date                            0
+market_segment_type                     0
+repeated_guest                          0
+no_of_previous_cancellations            0
+no_of_previous_bookings_not_canceled    0
+avg_price_per_room                      0
+no_of_special_requests                  0
+booking_status                          0
+dtype: int64
+
+Duplicate rows: 0
+Unique Booking IDs: 36275
+
+Booking status counts:
+booking_status
+Not_Canceled    24390
+Canceled        11885
+Name: count, dtype: int64
+
+Booking status percentage:
+booking_status
+Not_Canceled    67.236389
+Canceled        32.763611
+Name: proportion, dtype: float64
+
+Invalid arrival dates: 37
+      arrival_year  arrival_month  arrival_date
+2626          2018              2            29
+
+Rows with zero room price: 545
+market_segment_type
+Complementary    354
+Online           191
+Name: count, dtype: int64
+booking_status
+Not_Canceled    539
+Canceled          6
+Name: count, dtype: int64
+
+Rows with zero adults: 139
+count    139.000000
+mean       2.028777
+std        0.206505
+min        1.000000
+25%        2.000000
+50%        2.000000
+75%        2.000000
+max        3.000000
+Name: no_of_children, dtype: float64
+
+Rows with zero total nights: 78
+
+Cancellation rate (%) by market segment:
+  market_segment_type  cancellation_rate
+0            Aviation          29.600000
+1       Complementary           0.000000
+2           Corporate          10.907288
+3             Offline          29.948708
+4              Online          36.508142
+
+Cancellation rate (%) by repeated guest (0 = new, 1 = repeated):
+   repeated_guest  cancellation_rate
+0               0          33.580422
+1               1           1.720430
+
+Average lead time by booking status:
+                  count        mean        std  min   25%    50%    75%    max
+booking_status                                                                
+Canceled        11885.0  139.215482  98.947731  0.0  55.0  122.0  205.0  443.0
+Not_Canceled    24390.0   58.927224  64.028714  0.0  10.0   39.0   86.0  386.0
+
+Cancellation rate (%) by room type:
+  room_type_reserved  cancellation_rate
+0        Room_Type 1          32.250267
+1        Room_Type 2          32.947977
+2        Room_Type 3          28.571429
+3        Room_Type 4          34.158825
+4        Room_Type 5          27.169811
+5        Room_Type 6          42.028986
+6        Room_Type 7          22.784810
+
+Cancellation rate (%) by meal plan:
+  type_of_meal_plan  cancellation_rate
+0       Meal Plan 1          31.180169
+1       Meal Plan 2          45.567322
+2       Meal Plan 3          20.000000
+3      Not Selected          33.118908
+
+Average room price by booking status:
+                  count        mean        std  ...    50%     75%    max
+booking_status                                  ...                      
+Canceled        11885.0  110.589966  32.264394  ...  108.0  126.36  540.0
+Not_Canceled    24390.0   99.931412  35.872154  ...   95.0  119.10  375.5
+
+[2 rows x 8 columns]
+
+Cancellation rate (%) by number of special requests:
+   no_of_special_requests  cancellation_rate
+0                       0          43.206755
+1                       1          23.766816
+2                       2          14.596700
+3                       3           0.000000
+4                       4           0.000000
+5                       5           0.000000
+
+Cancellation rate (%) by arrival month:
+    arrival_month  cancellation_rate
+0               1           2.366864
+1               2          25.234742
+2               3          29.686175
+3               4          36.366959
+4               5          36.489607
+5               6          40.305963
+6               7          45.000000
+7               8          39.024390
+8               9          33.355021
+9              10          35.358285
+10             11          29.362416
+11             12          13.306852
+
+Cancellation rate (%) by arrival year:
+   arrival_year  cancellation_rate
+0          2017          14.752840
+1          2018          36.705756
+
+Correlation of every numerical feature with 'cancelled':
+cancelled                               1.000000
+lead_time                               0.438538
+arrival_year                            0.179529
+avg_price_per_room                      0.142569
+no_of_week_nights                       0.092996
+no_of_adults                            0.086920
+no_of_weekend_nights                    0.061563
+no_of_children                          0.033078
+arrival_date                            0.010629
+arrival_month                          -0.011233
+no_of_previous_cancellations           -0.033728
+no_of_previous_bookings_not_canceled   -0.060179
+required_car_parking_space             -0.086185
+repeated_guest                         -0.107287
+no_of_special_requests                 -0.253070
+Name: cancelled, dtype: float64
+
+Encoding for type_of_meal_plan :
+{'Meal Plan 1': np.int64(0), 'Meal Plan 2': np.int64(1), 'Meal Plan 3': np.int64(2), 'Not Selected': np.int64(3)}
+
+Encoding for room_type_reserved :
+{'Room_Type 1': np.int64(0), 'Room_Type 2': np.int64(1), 'Room_Type 3': np.int64(2), 'Room_Type 4': np.int64(3), 'Room_Type 5': np.int64(4), 'Room_Type 6': np.int64(5), 'Room_Type 7': np.int64(6)}
+
+Encoding for market_segment_type :
+{'Aviation': np.int64(0), 'Complementary': np.int64(1), 'Corporate': np.int64(2), 'Offline': np.int64(3), 'Online': np.int64(4)}
+
+Columns used in the model:
+Index(['no_of_adults', 'no_of_children', 'no_of_weekend_nights',
+       'no_of_week_nights', 'type_of_meal_plan', 'required_car_parking_space',
+       'room_type_reserved', 'lead_time', 'arrival_month',
+       'market_segment_type', 'repeated_guest', 'no_of_previous_cancellations',
+       'no_of_previous_bookings_not_canceled', 'avg_price_per_room',
+       'no_of_special_requests', 'cancelled'],
+      dtype='str')
+<class 'pandas.DataFrame'>
+RangeIndex: 36275 entries, 0 to 36274
+Data columns (total 16 columns):
+ #   Column                                Non-Null Count  Dtype  
+---  ------                                --------------  -----  
+ 0   no_of_adults                          36275 non-null  int64  
+ 1   no_of_children                        36275 non-null  int64  
+ 2   no_of_weekend_nights                  36275 non-null  int64  
+ 3   no_of_week_nights                     36275 non-null  int64  
+ 4   type_of_meal_plan                     36275 non-null  int64  
+ 5   required_car_parking_space            36275 non-null  int64  
+ 6   room_type_reserved                    36275 non-null  int64  
+ 7   lead_time                             36275 non-null  int64  
+ 8   arrival_month                         36275 non-null  int64  
+ 9   market_segment_type                   36275 non-null  int64  
+ 10  repeated_guest                        36275 non-null  int64  
+ 11  no_of_previous_cancellations          36275 non-null  int64  
+ 12  no_of_previous_bookings_not_canceled  36275 non-null  int64  
+ 13  avg_price_per_room                    36275 non-null  float64
+ 14  no_of_special_requests                36275 non-null  int64  
+ 15  cancelled                             36275 non-null  int64  
+dtypes: float64(1), int64(15)
+memory usage: 4.4 MB
+None
+
+Features used: ['no_of_adults', 'no_of_children', 'no_of_weekend_nights', 'no_of_week_nights', 'type_of_meal_plan', 'required_car_parking_space', 'room_type_reserved', 'lead_time', 'arrival_month', 'market_segment_type', 'repeated_guest', 'no_of_previous_cancellations', 'no_of_previous_bookings_not_canceled', 'avg_price_per_room', 'no_of_special_requests']
+Training set: (29020, 15)  Test set: (7255, 15)
+Cancelled share in train: 32.76 %
+Cancelled share in test : 32.76 %
+
+==============================
+Logistic Regression
+==============================
+Accuracy: 0.8094
+
+Confusion Matrix:
+[[4392  486]
+ [ 897 1480]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+Not Canceled       0.83      0.90      0.86      4878
+    Canceled       0.75      0.62      0.68      2377
+
+    accuracy                           0.81      7255
+   macro avg       0.79      0.76      0.77      7255
+weighted avg       0.80      0.81      0.80      7255
+
+
+==============================
+KNN
+==============================
+Accuracy: 0.8579
+
+Confusion Matrix:
+[[4434  444]
+ [ 587 1790]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+Not Canceled       0.88      0.91      0.90      4878
+    Canceled       0.80      0.75      0.78      2377
+
+    accuracy                           0.86      7255
+   macro avg       0.84      0.83      0.84      7255
+weighted avg       0.86      0.86      0.86      7255
+
+
+==============================
+Gaussian Naive Bayes
+==============================
+Accuracy: 0.3927
+
+Confusion Matrix:
+[[ 500 4378]
+ [  28 2349]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+Not Canceled       0.95      0.10      0.18      4878
+    Canceled       0.35      0.99      0.52      2377
+
+    accuracy                           0.39      7255
+   macro avg       0.65      0.55      0.35      7255
+weighted avg       0.75      0.39      0.29      7255
+
+
+==============================
+SVM
+==============================
+Accuracy: 0.8459
+
+Confusion Matrix:
+[[4534  344]
+ [ 774 1603]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+Not Canceled       0.85      0.93      0.89      4878
+    Canceled       0.82      0.67      0.74      2377
+
+    accuracy                           0.85      7255
+   macro avg       0.84      0.80      0.82      7255
+weighted avg       0.84      0.85      0.84      7255
+
+
+==============================
+Decision Tree
+==============================
+Accuracy: 0.8702
+
+Confusion Matrix:
+[[4406  472]
+ [ 470 1907]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+Not Canceled       0.90      0.90      0.90      4878
+    Canceled       0.80      0.80      0.80      2377
+
+    accuracy                           0.87      7255
+   macro avg       0.85      0.85      0.85      7255
+weighted avg       0.87      0.87      0.87      7255
+
+
+==============================
+Random Forest
+==============================
+Accuracy: 0.9012
+
+Confusion Matrix:
+[[4628  250]
+ [ 467 1910]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+Not Canceled       0.91      0.95      0.93      4878
+    Canceled       0.88      0.80      0.84      2377
+
+    accuracy                           0.90      7255
+   macro avg       0.90      0.88      0.89      7255
+weighted avg       0.90      0.90      0.90      7255
+
+
+
+MODEL COMPARISON TABLE
+               Model  Accuracy  Precision (Canceled)  Recall (Canceled)  F1 (Canceled)   TN   FP  FN   TP
+ Logistic Regression    0.8094                0.7528             0.6226         0.6816 4392  486 897 1480
+                 KNN    0.8579                0.8013             0.7531         0.7764 4434  444 587 1790
+Gaussian Naive Bayes    0.3927                0.3492             0.9882         0.5160  500 4378  28 2349
+                 SVM    0.8459                0.8233             0.6744         0.7414 4534  344 774 1603
+       Decision Tree    0.8702                0.8016             0.8023         0.8019 4406  472 470 1907
+       Random Forest    0.9012                0.8843             0.8035         0.8420 4628  250 467 1910
+
+Decision Tree depth: 40  leaves: 3586
+
+Random Forest feature importance:
+lead_time                               0.3687
+avg_price_per_room                      0.1932
+no_of_special_requests                  0.0997
+arrival_month                           0.0983
+no_of_week_nights                       0.0613
+market_segment_type                     0.0543
+no_of_weekend_nights                    0.0424
+no_of_adults                            0.0262
+type_of_meal_plan                       0.0192
+room_type_reserved                      0.0172
+no_of_children                          0.0079
+required_car_parking_space              0.0072
+repeated_guest                          0.0023
+no_of_previous_bookings_not_canceled    0.0015
+no_of_previous_cancellations            0.0005
+dtype: float64
+
+LEAKAGE / SENSITIVITY CHECK
+              Model              Feature set  Accuracy  Precision (Canceled)  Recall (Canceled)  F1 (Canceled)
+      Random Forest    with special requests    0.9012                0.8843             0.8035         0.8420
+      Random Forest without special requests    0.8469                0.8106             0.6950         0.7484
+Logistic Regression    with special requests    0.8094                0.7528             0.6226         0.6816
+Logistic Regression without special requests    0.7615                0.6931             0.4884         0.5731
