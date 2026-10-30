@@ -1,19 +1,15 @@
 # Hotel Reservation Cancellation Prediction Using Machine Learning
 
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
-[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange.svg)](https://jupyter.org/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-
 A binary classification machine learning project that predicts whether a hotel reservation will be **cancelled** or **not cancelled** based on booking details available at reservation time. Compares six classification models and analyzes key cancellation drivers.
 
 ---
 
-## 📌 Problem Statement
+## Problem Statement
 Can we accurately predict whether a hotel booking will be cancelled using customer, reservation, and pricing features known at booking time? Accurately forecasting cancellations allows hotel revenue managers to optimize overbooking strategies, adjust dynamic pricing, and implement proactive retention offers.
 
 ---
 
-## 📊 Dataset Overview
+## Dataset Overview
 - **Source**: [Hotel Reservations Classification Dataset](https://www.kaggle.com/datasets/ahsan81/hotel-reservations-classification-dataset) (Kaggle)
 - **Observations**: 36,275 reservations
 - **Features**: 19 columns (lead time, room type, market segment, special requests, average price per room, repeated guest status, etc.)
@@ -23,7 +19,7 @@ Can we accurately predict whether a hotel booking will be cancelled using custom
 
 ---
 
-## ⚙️ Methodology & Pipeline
+## Methodology & Pipeline
 1. **Exploratory Data Analysis (EDA)**: Distribution of cancellations, market segments, lead time variations, room pricing, and correlation analysis.
 2. **Data Preprocessing**:
    - Dropped non-predictive identifiers (`Booking_ID`, `arrival_year`, `arrival_date`).
@@ -45,7 +41,7 @@ Can we accurately predict whether a hotel booking will be cancelled using custom
 
 ---
 
-## 🏆 Model Performance (Test Set: 7,255 Bookings)
+## Model Performance (Test Set: 7,255 Bookings)
 
 | Model | Accuracy | Precision (Canceled) | Recall (Canceled) | F1-Score (Canceled) |
 |---|:---:|:---:|:---:|:---:|
@@ -94,7 +90,6 @@ Can we accurately predict whether a hotel booking will be cancelled using custom
 
 ---
 
-## 🚀 Getting Started
 
 ### 1. Clone the repository
 ```bash
